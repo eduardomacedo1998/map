@@ -1,0 +1,36 @@
+form{
+    border: solid rgb(224, 219, 219);
+    width: 250px;
+    padding: 2%;
+    margin: auto;
+}
+
+input{
+    margin:2%;
+    border: solid silver;
+    width: 90%;
+    border-radius: 25px;
+    padding: 2%;
+}
+
+button{
+    margin-left: 35%;
+}
+
+.titulo{
+    text-align: center;
+}
+
+
+span{
+    font-weight: bold;
+}
+
+.caixa{
+    background-color: rgb(43, 226, 73);
+    width: 310px;
+    margin: auto;
+    font-weight: bold;
+    text-align: center;
+    
+}
