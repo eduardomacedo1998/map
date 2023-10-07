@@ -40,16 +40,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['usuarios']) && isset($_POST['senha'])) {
         // Os campos de usuário e senha foram preenchidos
 
-        // Faça o que for necessário com os dados aqui
-        $usuario = $_POST['usuarios'];
-        $senha = $_POST['senha'];
-     
-        $dadosuser = new Database("localhost", "root", "", "produtos");
+       // Faça o que for necessário com os dados aqui
+$usuario = $_POST['usuarios'];
+$senha = $_POST['senha'];
 
-        $usuarioLogado = $dadosuser->selectLoguin("usuarios",$usuario,$senha);
+$dadosuser = new Database("localhost", "root", "", "produtos");
 
+$usuarioLogado = $dadosuser->selectLoguin("usuarios", $usuario, $senha);
 
-     
+if ($usuarioLogado) {
+    // Se $usuarioLogado tiver dados, exiba a mensagem de boas-vindas
+    echo "Bem-vindo, " . json_encode($usuarioLogado); // Substitua 'nome' pelo campo que contém o nome do usuário
+} else {
+    // Se $usuarioLogado estiver vazio, exiba a mensagem de erro
+    echo "Usuário não encontrado. Verifique suas credenciais.";
+}
+
     }
 }
 ?>
